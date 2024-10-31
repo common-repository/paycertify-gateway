@@ -1,0 +1,15 @@
+{
+    "name": "paycertify-wrapper-php-example",
+    "require": {
+        "php": ">=5.4",
+        "silex/silex": "~2.0",
+        "twig/twig": "^1.23",
+        "paycertify/wrappers": "dev-master"
+    },
+    "extra": {
+        "heroku": {
+            "document-root": "web",
+            "index-document": "index.php"
+        }
+    }
+}

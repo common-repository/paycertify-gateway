@@ -1,0 +1,19 @@
+<h1> Decide which method you want to choose </h1>
+<p> Void: undo an unsettled transaction </p>
+<p> Return: credits the card holder’s account </p>
+
+<form action='/gateway/void' method="POST">
+  <label>Type</label><br/>
+  <select name="type">
+    <option selected value="void"> Void </option>
+    <option value="return"> Return </option>
+  </select><br/><br/>
+
+  <label> Transaction ID </label><br/>
+  <input name="transaction_id" value="<%= @transaction_id %>"/><br/><br/>
+
+  <label>Amount</label><br/>
+  <input name="amount" value="1.00"/><br/><br/>
+
+  <input type="submit" value="Submit!" />
+</form>

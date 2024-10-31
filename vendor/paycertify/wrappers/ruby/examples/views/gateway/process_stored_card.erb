@@ -1,0 +1,16 @@
+<h1> Step 3: Process Stored Credit Card. </h1>
+<p> You can use the credit_card_id field (<%= @card.credit_card_id %>) to bill your customers recurringly, as you'd prefer, by for example, setting up a cron job to check which contracts/plans are pending expiration, etc. </p>
+<p> On this example, we'll solely use the card token by submitting the form below to show it. </p>
+
+<form action='/gateway/process_stored_card' method="POST">
+  <label>Credit Card ID</label><br/>
+  <input name="credit_card_id" value="<%= @card.credit_card_id %>"/><br/><br/>
+
+  <label>Amount</label><br/>
+  <input name="amount" value="2.00"/><br/><br/>
+
+  <label>Transaction ID</label><br/>
+  <input name="transaction_id" value="<%= SecureRandom.hex %>"/><br/><br/>
+
+  <input type="submit" value="Save!" />
+</form>

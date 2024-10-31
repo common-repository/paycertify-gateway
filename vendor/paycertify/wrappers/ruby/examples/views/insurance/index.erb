@@ -1,0 +1,68 @@
+<h1> Insurance example </h1>
+
+<form action="/insurance" method="POST">
+  <label>First Name</label><br/>
+  <input name="firstname" value="John"/><br/><br/>
+
+  <label>Last Name</label><br/>
+  <input name="lastname" value="Doe"/><br/><br/>
+
+  <label>Email</label><br/>
+  <input name="email" value="john@doe.com"/><br/><br/>
+
+  <label>Order #</label><br/>
+  <input name="order_number" value="<%= rand(1000000..9999999) %>"/><br/><br/>
+
+  <label>Items ordered (comma separated)</label><br/>
+  <input name="items_ordered" value="shoes, t-shirt"/><br/><br/>
+
+  <label>Amount</label><br/>
+  <input name="charge_amount" value="50.00"/><br/><br/>
+
+  <label>Billing Address</label><br/>
+  <input name="billing_address" value="123 A Street"/><br/><br/>
+
+  <label>Billing Address (Line 2)</label><br/>
+  <input name="billing_address2" value="Apt 102"/><br/><br/>
+
+  <label>Billing City</label><br/>
+  <input name="billing_city" value="Campbell"/><br/><br/>
+
+  <label>Billing State</label><br/>
+  <input name="billing_state" value="California"/><br/><br/>
+
+  <label>Billing ZIP</label><br/>
+  <input name="billing_zip_code" value="12312"/><br/><br/>
+
+  <label>Billing Country</label><br/>
+  <input name="billing_country" value="USA"/><br/><br/>
+
+  <label>Billing Phone</label><br/>
+  <input name="phone" value=""/><br/><br/>
+
+  <label>Shipping Address</label><br/>
+  <input name="shipping_address" value=""/><br/><br/>
+
+  <label>Shipping Address (Line 2)</label><br/>
+  <input name="shipping_address2" value=""/><br/><br/>
+
+  <label>Shipping City</label><br/>
+  <input name="shipping_city" value=""/><br/><br/>
+
+  <label>Shipping State</label><br/>
+  <input name="shipping_state" value=""/><br/><br/>
+
+  <label>Shipping Country</label><br/>
+  <input name="shipping_country" value="USA"/><br/><br/>
+
+  <label>Shipping ZIP</label><br/>
+  <input name="shipping_zip_code" value=""/><br/><br/>
+
+  <label>Shipping Carrier</label><br/>
+  <input name="shipping_carrier" value=""/><br/><br/>
+
+  <label>Tracking Number</label><br/>
+  <input name="tracking_number" value=""/><br/><br/>
+
+  <input type="submit" value="Send!" />
+</form>

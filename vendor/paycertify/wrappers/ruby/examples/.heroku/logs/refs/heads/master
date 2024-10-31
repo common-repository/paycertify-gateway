@@ -1,0 +1,9 @@
+0000000000000000000000000000000000000000 5d4912668eea488a86def99103e553d05f163a36 Diego Ballona <root@dballona.com> 1487355892 -0200	commit (initial): pure rack app
+5d4912668eea488a86def99103e553d05f163a36 fcbe54b1a4d1714cbde2135325f63d0936e1afc3 Diego Ballona <root@dballona.com> 1487356180 -0200	commit: Procfile
+fcbe54b1a4d1714cbde2135325f63d0936e1afc3 b57a82913f9f5ab907e1e0a81e561c8ab7d407ea Diego Ballona <root@dballona.com> 1487356411 -0200	commit: remove procfile
+b57a82913f9f5ab907e1e0a81e561c8ab7d407ea f9d10854dc4933a9fa3e091823e711cb4d3a32ec Diego Ballona <root@dballona.com> 1487356518 -0200	commit: remove procfile
+f9d10854dc4933a9fa3e091823e711cb4d3a32ec 0b8f14695b8d0002852ee7aa6881383317953912 Diego Ballona <root@dballona.com> 1487356635 -0200	commit: add webrick
+0b8f14695b8d0002852ee7aa6881383317953912 a9c1c28378f68837da630e9970ecb8c0860b611b Diego Ballona <root@dballona.com> 1487357298 -0200	commit: ssl
+a9c1c28378f68837da630e9970ecb8c0860b611b a4762350ebe777cc0332bcac83109faf629e3d5b Diego Ballona <root@dballona.com> 1487357603 -0200	commit: bump version
+a4762350ebe777cc0332bcac83109faf629e3d5b cfba2d48cfa532d4f304a41a3a03fd188dd65016 Diego Ballona <root@dballona.com> 1487357758 -0200	commit: bump version
+cfba2d48cfa532d4f304a41a3a03fd188dd65016 d7685f29a7cb9b13310bb850e55e114af112dbc0 Diego Ballona <root@dballona.com> 1487376466 -0200	commit: 3ds working

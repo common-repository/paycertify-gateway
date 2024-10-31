@@ -1,0 +1,24 @@
+<h1> Step 2: Store Credit Card Info </h1>
+<p> Your customer ID is <%= @customer.customer_id %> </p>
+
+<form action='/gateway/create_credit_card' method="POST">
+  <label>Customer ID</label><br/>
+  <input name="customer_id" value="<%= @customer.customer_id %>"/><br/><br/>
+
+  <label>Card Number</label><br/>
+  <input name="card_number" value="4111 1111 1111 1111"/><br/><br/>
+
+  <label>Expiration Month</label><br/>
+  <input name="expiration_month" value="12"/><br/><br/>
+
+  <label>Expiration Year</label><br/>
+  <input name="expiration_year" value="2020"/><br/><br/>
+
+  <label>Name On Card</label><br/>
+  <input name="name_on_card" value="John Doe"/><br/><br/>
+
+  <label>Zip</label><br/>
+  <input name="zip" value="30123"/><br/><br/>
+
+  <input type="submit" value="Save!" />
+</form>

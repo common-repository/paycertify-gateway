@@ -1,0 +1,83 @@
+<h1> Confirmation </h1>
+<p> Send e-mail and sms to confirm transaction and gather customer data. </p>
+
+<form action='/fraud_prevention/confirmation' method="POST">
+  <label>Transaction ID</label><br/>
+  <input name="transaction_id" value="{{ hex }}"/><br/><br/>
+
+  <label>Card last four digits</label><br/>
+  <input name="cc_last_four_digits" value="1234"/><br/><br/>
+
+  <label>Customer name</label><br/>
+  <input name="name" value="John Doe"/><br/><br/>
+
+  <label>Customer email</label><br/>
+  <input name="email" value="engineering@paycertify.com"/><br/><br/>
+
+  <label>Customer phone</label><br/>
+  <input name="phone" value="+1 123 123-1234"/><br/><br/>
+
+  <label>Amount</label><br/>
+  <input name="amount" value="1.00"/><br/><br/>
+
+  <label>Currency</label><br/>
+  <input name="currency" value="USD"/><br/><br/>
+
+  <label>Payment Gateway</label><br/>
+  <select name="payment_gateway">
+    <option value="authnet"> Authorize.NET </option>
+    <option value="nmi"> NMI </option>
+    <option value="stripe"> Stripe </option>
+    <option value="paycertify" selected> PayCertify </option>
+  </select><br/><br/>
+
+  <label>Transaction Date</label><br/>
+  <input name="transaction_date" value="{{ time }}"/><br/><br/>
+
+  <label>Order Description</label><br/>
+  <input name="order_description" value="A product description"/><br/><br/>
+
+  <label>Card Type</label><br/>
+  <input name="card_type" value="MasterCard"/><br/><br/>
+
+  <label>Name on Card</label><br/>
+  <input name="name_on_card" value="John Doe"/><br/><br/>
+
+  <label>Address</label><br/>
+  <input name="address" value="123 A Street"/><br/><br/>
+
+  <label>City</label><br/>
+  <input name="city" value="Campbell"/><br/><br/>
+
+  <label>State</label><br/>
+  <input name="state" value="CA"/><br/><br/>
+
+  <label>Country</label><br/>
+  <input name="country" value="US"/><br/><br/>
+
+  <label>ZIP</label><br/>
+  <input name="zip" value="12345"/><br/><br/>
+
+  <label>Confirmation Type</label><br/>
+  <select name="confirmation_type">
+    <option value="default" selected>MOTO</option>
+    <option value="ecommerce" selected>E-commerce</option>
+  </select><br/><br/>
+
+  <label>Fraud Score Processing</label><br/>
+  <select name="fraud_score_processing">
+    <option value="sync" selected> Synchronously </option>
+    <option value="async"> Asynchronously </option>
+  </select><br/><br/>
+
+  <label>Scheduled Messages</label><br/>
+  <input name="scheduled_messages" value=""/><br/><br/>
+
+  <label>Thank you page URL</label><br/>
+  <input name="thank_you_page_url" value=""/><br/><br/>
+
+  <label>Metadata</label><br/>
+  <input name="metadata" value=""/><br/><br/>
+
+  <input type="submit" value="Submit!"/>
+</form>

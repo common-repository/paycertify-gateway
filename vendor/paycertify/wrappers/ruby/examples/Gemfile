@@ -1,0 +1,13 @@
+source 'https://rubygems.org'
+
+# Examples deps
+ruby '2.3.0'
+
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'activesupport'
+gem 'rack-ssl'
+gem 'webrick'
+gem 'pry'
+
+gem 'paycertify', path: '..'

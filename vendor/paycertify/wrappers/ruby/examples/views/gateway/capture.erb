@@ -1,0 +1,10 @@
+<h1> Step 2: Capture the amount on the credit card </h1>
+<p> This step, in most real world scenario wouldn't exist: you would store both transaction ID (<%= @transaction.transaction_id %>) and amount (<%= @transaction.amount %>) and would bill the customer later, at convenient time. </p>
+
+<form action='/gateway/capture' method="POST">
+  <p> Confirm your transaction! </p>
+  <input type='hidden' name='transaction_id' value='<%= @transaction.transaction_id %>'/>
+  <input type='hidden' name='amount' value='<%= @transaction.amount %>'/>
+
+  <input type="submit" value="Buy!" />
+</form>

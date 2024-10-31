@@ -1,0 +1,88 @@
+<h1> Sale: authorization and capture on the same call. </h1>
+
+<form action='/gateway/sale' method="POST">
+  <label>Type</label><br/>
+  <select name="type">
+    <option selected value="sale"> Sale </option>
+  </select><br/><br/>
+
+  <label>Amount</label><br/>
+  <input name="amount" value="1.00"/><br/><br/>
+
+  <label>Currency</label><br/>
+  <select name="currency">
+    <option selected value="USD"> US Dollars </option>
+    <option value="EUR"> Euro </option>
+  </select><br/><br/>
+
+  <label>Card Number</label><br/>
+  <input name="card_number" value="4111111111111111"/><br/><br/>
+
+  <label>Expiration Month</label><br/>
+  <input name="expiration_month" value="12"/><br/><br/>
+
+  <label>Expiration Year</label><br/>
+  <input name="expiration_year" value="2020"/><br/><br/>
+
+  <label>Name on Card</label><br/>
+  <input name="name_on_card" value="John Doe"/><br/><br/>
+
+  <label>CVV</label><br/>
+  <input name="cvv" value="123"/><br/><br/>
+
+  <label>Transaction ID</label><br/>
+  <input name="transaction_id" value="001"/><br/><br/>
+
+  <label>Billing City</label><br/>
+  <input name="billing_city" value="Campbell"/><br/><br/>
+
+  <label>Billing State</label><br/>
+  <input name="billing_state" value="California"/><br/><br/>
+
+  <label>Billing Country</label><br/>
+  <input name="billing_country" value="USA"/><br/><br/>
+
+  <label>Billing ZIP</label><br/>
+  <input name="billing_zip" value="95008"/><br/><br/>
+
+  <label>Shipping Address</label><br/>
+  <input name="shipping_address" value=""/><br/><br/>
+
+  <label>Shipping City</label><br/>
+  <input name="shipping_city" value=""/><br/><br/>
+
+  <label>Shipping State</label><br/>
+  <input name="shipping_state" value=""/><br/><br/>
+
+  <label>Shipping Country</label><br/>
+  <input name="shipping_country" value=""/><br/><br/>
+
+  <label>Shipping ZIP</label><br/>
+  <input name="shipping_zip" value=""/><br/><br/>
+
+  <label>Email</label><br/>
+  <input name="email" value="dballona@gmail.com"/><br/><br/>
+
+  <label>Phone</label><br/>
+  <input name="phone" value="+55 31 99555-2611"/><br/><br/>
+
+  <label>IP</label><br/>
+  <input name="ip" value="127.0.0.1"/><br/><br/>
+
+  <label>Order Description</label><br/>
+  <input name="order_description" value="Details about the transaction"/><br/><br/>
+
+  <label>Customer ID</label><br/>
+  <input name="customer_id" value="C000001"/><br/>
+
+  <label>3DS CAVV</label><br/>
+  <input name="cavv" value=""/><br/>
+
+  <label>3DS ECI</label><br/>
+  <input name="eci" value=""/><br/>
+
+  <label>3DS XID</label><br/>
+  <input name="xid" value=""/><br/><br/>
+
+  <input type="submit" value="Buy!" />
+</form>

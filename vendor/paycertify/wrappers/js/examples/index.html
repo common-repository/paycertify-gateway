@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../dist/paycertify.js"></script>
+  </head>
+
+  <body>
+    <h1> Checkout </h1>
+
+    <form action="https://localhost:8080/" method="POST">
+      <label for="name">Name</label><br/>
+      <input value="John Doe" name="name" data-paycertify="name"/><br/><br/>
+
+      <label for="email">Email</label><br/>
+      <input value="john@doe.com" name="email" data-paycertify="email"/><br/><br/>
+
+      <label for="phone">Phone</label><br/>
+      <input value="+1 123 123-1234" name="phone" data-paycertify="phone"/><br/><br/>
+
+      <label for="address">Address</label><br/>
+      <input value="123 One Street" name="address" data-paycertify="address"/><br/><br/>
+
+      <label for="city">City</label><br/>
+      <input value="Campbell" name="city" data-paycertify="city"/><br/><br/>
+
+      <label for="state">State</label><br/>
+      <input value="CA" name="state" data-paycertify="state"/><br/><br/>
+
+      <label for="country">Country</label><br/>
+      <input value="US" name="country" data-paycertify="country"/><br/><br/>
+
+      <label for="zip">ZIP</label><br/>
+      <input value="30123" name="zip" data-paycertify="zip"/><br/><br/>
+
+
+      <label for="cc">Credit card</label><br/>
+      <input value="" name="cc"/><br/><br/>
+
+      <input type="hidden" name="amount" data-paycertify="amount" value="1.00"/>
+      <input type="hidden" name="session_id" data-paycertify="session_id" value="9fdd27296d75cb6"/>
+      
+      <input type="hidden" id="kount-errors" name="errors"/>
+
+      <input type="submit"/><br/><br/>
+    </form>
+
+    <script>
+      new PayCertify.Checkout({
+        // The PayCertify Fraud Portal API Key.
+        // Log in to paycertify.com to get this info or
+        // ask for it for PayCertify's support team.
+        apiKey: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjp7IiRvaWQiOiI1NjlhYjdlOGViYTI2NjQ2Y2MwMDAwMDQifSwiZXhwIjozMzA0NjY2NjEwM30.03XfsUqiXtV9EIhGaIBDQkq3AOCBzK3-dXNq0A3l8hQ',
+        
+        // Set of rules to prevent fraudulent transactions from happening.
+        rejectWhen: {
+          // mode can be 'and' / 'or'. when and, all options should be matched. 
+          // when or, if one option fails, the transaction will be halted.
+          // Default: 'and'
+          mode: 'and', 
+
+          // Options for recommendation are decline and review.
+          // Default: ['decline']
+          recommendation: ['decline', 'review'],
+
+          // Maximum amount of rules that can be triggered to pass through.
+          // Default: 1
+          maxRulesTriggered: 1,
+
+          // Maximum score tolerated. Minimum is 1 and maximum is 99.
+          // Default: 50
+          maxScore: 50
+        }
+      });
+
+      // Add a listener to manage the error messages and append it as you'd
+      // like to your design. e.detail contains an object with the errors.
+      //
+      window.addEventListener('paycertifyCheckoutFailure', function (e) {
+        // Transaction declined -> send data anyways;
+        // var form = document.querySelectorAll('form');
+        // var errors = document.getElementById('kount-errors');
+        // errors.value = JSON.stringify(e.detail);
+        // form[0].submit();
+
+
+        // Transaction declined -> send to a specific page:
+        // window.location.href = 'http://example.com/payment_declined'
+
+        console.log(e.detail);
+      }, false);
+    </script>
+
+    <iframe width=1 height=1 frameborder=0 scrolling=no src="https://YOUR_SERVER_URL/kount?m=691000&s=9fdd27296d75cb6">
+      <img width=1 height=1 src="https://YOUR_SERVER_URL?m=691000&s=9fdd27296d75cb6">
+    </iframe>
+  </body>
+</html>

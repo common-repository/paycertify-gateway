@@ -1,0 +1,101 @@
+#!/bin/bash
+
+usage="$(basename "$0") [-h] [-k -e -d -s -m]
+Script that signs PayCertify 3D Secure API requests
+
+Where:
+    -h  show this help text
+    -k  the API Key
+    -s  the API Secret
+    -e  the endpoint to be reached
+    -d  request body JSON encoded
+    -m  mode (live|test)
+"
+
+
+mkdir -p ./3ds/tmp
+touch ./3ds/tmp/in.json
+touch ./3ds/tmp/out.json
+
+while getopts ":hk:e:d:s:m:" opt; do
+  case $opt in
+    h)
+      echo "$usage"
+      exit
+      ;;
+    k) 
+      API_KEY="$OPTARG"
+      ;;
+    e)
+      case "$OPTARG" in
+      /*)
+        ENDPOINT="$OPTARG"
+        ;;
+      *)
+        ENDPOINT="/$OPTARG"
+        ;;
+      esac
+      ;;
+    d)
+      DATA="$OPTARG"
+      ;;
+    s)
+      API_SECRET="$OPTARG"
+      ;;
+    m)
+      case "$OPTARG" in
+      live)
+        MODE="$OPTARG"
+        ;;
+      test)
+        MODE="$OPTARG"
+        ;;
+      *)
+        echo 'Invalid mode – should be live or test' && exit 1;
+      esac
+      ;;
+    \?)
+      printf "illegal option: -%s\n" "$OPTARG" >&2
+      echo "$usage" >&2
+      exit 1
+      ;;
+  esac
+done
+
+echo $3 > ./3ds/tmp/in.json
+cat ./3ds/tmp/in.json | jq -S '.' > ./3ds/tmp/out.json
+$DATA=`cat ./3ds/tmp/out.json`
+
+
+if [ "$MODE" = "live" ]; then
+  FULL_URL="https://mpi.3dsintegrator.com/index.php$ENDPOINT"
+elif [ "$MODE" = "test" ]; then
+  FULL_URL="https://mpi.3dsintegrator.com/index_demo.php$ENDPOINT"
+fi
+
+SIGNATURE=$API_KEY$FULL_URL$DATA$API_SECRET
+
+echo "API Key is:"
+echo $API_KEY
+echo
+echo "FULL_URL is:"
+echo $FULL_URL
+echo
+echo "Sorted data is:"
+echo $DATA
+echo
+echo "API Secret is:"
+echo $API_SECRET
+echo
+echo "Mode is:"
+echo $MODE
+echo
+echo
+echo "____________"
+echo
+echo
+echo "Your signature should be:"
+echo -n $SIGNATURE | openssl dgst -sha256
+
+
+rm -rf ./3ds/tmp

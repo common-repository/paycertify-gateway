@@ -1,0 +1,32 @@
+<h1> Step 1: Submit Customer Data </h1>
+
+<form action='/gateway/create_customer' method="POST">
+  <label>App Customer ID</label><br/>
+  <input name="app_customer_id" required value="MY-INTERNAL-ID-{{ hex }}"/><br/><br/>
+
+  <label>Name</label><br/>
+  <input name="name" required value="John Doe"/><br/><br/>
+
+  <label>Address</label><br/>
+  <input name="address" value="1 Infinite Loop"/><br/><br/>
+
+  <label>City</label><br/>
+  <input name="city" value="Somewhere"/><br/><br/>
+
+  <label>State</label><br/>
+  <input name="state" value="XX"/><br/><br/>
+
+  <label>Zip</label><br/>
+  <input name="zip" value="30123"/><br/><br/>
+
+  <label>Phone</label><br/>
+  <input name="phone" value="+1 123 123-1234"/><br/><br/>
+
+  <label>Fax</label><br/>
+  <input name="fax" value="+1 123 123-1234"/><br/><br/>
+
+  <label>Email</label><br/>
+  <input name="email" value="john@doe.com"/><br/><br/>
+
+  <input type="submit" value="Save!" />
+</form>

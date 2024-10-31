@@ -1,0 +1,17 @@
+<h1> Frictionless mode 3DS </h1>
+<p> Run 3DS without leaving your website </p>
+
+<form action='/3ds/checkout' method="POST">
+  <input type="hidden" name="type" value="frictionless">
+
+  <label> Card Number </label><br/>
+  <input name="card_number" value="4111111111111111" /><br/><br/>
+
+  <label> Expiration Month </label><br/>
+  <input name="expiration_month" value="12" /><br/><br/>
+
+  <label> Expiration Year </label><br/>
+  <input name="expiration_year" value="2020" /><br/><br/>
+  
+  <input type="submit" value="Buy!" />
+</form>

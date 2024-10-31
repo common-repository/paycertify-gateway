@@ -1,0 +1,21 @@
+<h1> Recurring 3DS </h1>
+<p> Run 3DS for trial + first payment cycle </p>
+
+<form action='/3ds/rebills' method="POST">
+  <label> Card Number </label><br/>
+  <input name="card_number" value="4111111111111111" /><br/><br/>
+
+  <label> Expiration Month </label><br/>
+  <input name="expiration_month" value="12" /><br/><br/>
+
+  <label> Expiration Year </label><br/>
+  <input name="expiration_year" value="2020" /><br/><br/>
+
+  <label> Trial amount </label><br/>
+  <input name="trial_amount" value="9.99" /><br/><br/>
+
+  <label> Subscription amount </label><br/>
+  <input name="subscription_amount" value="29.99" /><br/><br/>
+  
+  <input type="submit" value="Buy!" />
+</form>

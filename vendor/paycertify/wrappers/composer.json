@@ -1,0 +1,20 @@
+{
+    "name": "paycertify/wrappers",
+    "type": "library",
+    "homepage": "https://github.com/paycertify/wrappers",
+    "authors": [
+        {
+            "name": "PayCertify Engineering Team",
+            "email": "engineering@paycertify.com"
+        }
+    ],
+    "license": "MIT",
+    "description": "Interact with the Gateway, 3DS, Kount, and FraudPortal",
+    "require": {
+        "php": ">=5.4",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "autoload": {
+        "psr-4": { "PayCertify\\": "php/lib/src/PayCertify" }
+    }
+}
